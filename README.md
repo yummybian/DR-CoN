@@ -9,7 +9,7 @@ docker build -t drcon .;
 Run with:
 
 ```
-docker run -it -e "CONSUL=$DOCKER_IP:8500" -e "SERVICE=simple" -p 80:80 drcon
+docker run --rm --name=drcon --net="host" -it -p 8080:80 drcon
 ```
 
 `CONSUL` is the location of your Consul service, `SERVICE` is the query sent to consul which will be distributed across.
